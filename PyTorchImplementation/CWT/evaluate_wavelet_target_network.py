@@ -1,5 +1,5 @@
 import numpy as np
-from Pytorch_implementation.CWT import Wavelet_CNN_Target_Network
+import Wavelet_CNN_Target_Network
 import torch
 from torch.utils.data import TensorDataset
 import torch.nn as nn
