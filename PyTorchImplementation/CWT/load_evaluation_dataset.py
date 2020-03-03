@@ -1,5 +1,6 @@
 import numpy as np
-from Pytorch_implementation import calculate_wavelet
+import calculate_wavelet
+import os
 
 number_of_vector_per_example = 52
 number_of_canals = 8
@@ -94,7 +95,7 @@ def read_data(path, type):
         labels = []
         examples = []
         for i in range(number_of_classes * 4):
-            data_read_from_file = np.fromfile(path + '\Male' + str(candidate) + '\\' + type + '\\classe_%d.dat' % i,
+            data_read_from_file = np.fromfile(os.path.join(path, 'Male' + str(candidate), type, 'classe_%d.dat' % i),
                                               dtype=np.int16)
             data_read_from_file = np.array(data_read_from_file, dtype=np.float32)
             dataset_example = format_data_to_train(data_read_from_file)
@@ -108,7 +109,7 @@ def read_data(path, type):
         labels = []
         examples = []
         for i in range(number_of_classes * 4):
-            data_read_from_file = np.fromfile(path + '\\Female' + str(candidate) + '\\' + type + '\\classe_%d.dat' % i,
+            data_read_from_file = np.fromfile(os.path.join(path, 'Female' + str(candidate), type, 'classe_%d.dat' % i),
                                               dtype=np.int16)
             data_read_from_file = np.array(data_read_from_file, dtype=np.float32)
             dataset_example = format_data_to_train(data_read_from_file)

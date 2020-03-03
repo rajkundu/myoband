@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from Pytorch_implementation.CWT.McDropout import McDropout
+from McDropout import McDropout
 import numpy as np
 
 class Net(nn.Module):

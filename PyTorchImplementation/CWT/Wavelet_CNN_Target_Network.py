@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from Pytorch_implementation.CWT.McDropout import McDropout
+from McDropout import McDropout
 import numpy as np
-from Pytorch_implementation.CWT import ScaleLayer
+import ScaleLayer
 
 
 class SourceNetwork(nn.Module):

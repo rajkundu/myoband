@@ -1,5 +1,5 @@
 import numpy as np
-from Pytorch_implementation import calculate_wavelet
+import calculate_wavelet
 
 number_of_vector_per_example = 52
 number_of_canals = 8

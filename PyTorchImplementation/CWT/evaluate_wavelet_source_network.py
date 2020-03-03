@@ -1,5 +1,5 @@
 import numpy as np
-from Pytorch_implementation.CWT import Wavelet_CNN_Source_Network
+import Wavelet_CNN_Source_Network
 from torch.utils.data import TensorDataset
 import torch.nn as nn
 import torch.optim as optim
@@ -7,6 +7,7 @@ import torch
 from torch.autograd import Variable
 import time
 from scipy.stats import mode
+import load_evaluation_dataset
 
 def confusion_matrix(pred, Y, number_class=7):
     confusion_matrice = []
@@ -252,7 +253,7 @@ def train_model(cnn, criterion, optimizer, scheduler, dataloaders, num_epochs=50
 
 if __name__ == '__main__':
     # Comment between here
-    '''
+    
     examples, labels = load_evaluation_dataset.read_data('../EvaluationDataset',
                                                 type='training0')
     
@@ -270,7 +271,7 @@ if __name__ == '__main__':
     
     datasets = [examples, labels]
     pickle.dump(datasets, open("saved_dataset_test1.p", "wb"))
-    '''
+    
     # and here if the evaluation dataset was already processed and saved with "load_evaluation_dataset"
     import os
 
